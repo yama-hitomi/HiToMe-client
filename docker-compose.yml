@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  nuxt:
+    build: .
+    tty: true
+    command: >
+      yarn dev --port 3333
+    volumes:
+      - ./:/worker
+    working_dir: /worker
+    environment:
+      HOST: 0.0.0.0
+    ports:
+      - "3333:3333"
